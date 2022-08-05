@@ -1,6 +1,6 @@
 import say from "say";
 import tmi from "tmi.js";
-import { identity, channels, redemptionData, trustedUsers, slurFoundMessage, slurs } from "./secrets.js"
+import { identity, channels, redemptionData, trustedUsers, slurFoundMessage, slurs, commandMap } from "./secrets.js"
 
 const FREEFORALL = true;
 
@@ -78,8 +78,8 @@ client.on("chat", (channel, userstate, message, self) => {
 })
 
 client.on("redeem", (channel, username, rewardType, tags, message) => {
-    switch(redeemConversion(rewardType)) {
-    case 'Make Foxbot Say Something':
+    switch(commandMap[redeemConversion(rewardType)]) {
+    case 'tts':
         let slurCheckResult = slurCheck(message);
         sendMessageWithSlurChecking(message, true, slurCheckResult);
         break;

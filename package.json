@@ -1,0 +1,17 @@
+{
+  "name": "safe twitch bot",
+  "version": "0.0.1",
+  "description": "chat bot with basic slur checking",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "yarn test",
+    "start": "node --experimental-modules index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "say": "^0.16.0",
+    "tmi.js": "^1.8.5"
+  }
+}
